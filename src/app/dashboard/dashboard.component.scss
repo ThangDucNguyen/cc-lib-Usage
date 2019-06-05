@@ -1,5 +1,10 @@
 .dashboardContainer{
   margin-top: 100px;
-  margin-left: 250px;
+  margin-left: 350px;
   text-align: left;
+}
+@media screen and (max-width: 992px) {
+  .dashboardContainer {
+    margin-left: 80px;
+  }
 }
