@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@ng-bootstrap/ng-bootstrap": "^4.1.3",
-    "@thangducnguyen/cc-lib": "0.0.2",
+    "@thangducnguyen/cc-lib": "0.0.3",
     "angular-bootstrap-md": "^7.5.3",
     "angular-in-memory-web-api": "^0.8.0",
     "core-js": "^2.5.4",
