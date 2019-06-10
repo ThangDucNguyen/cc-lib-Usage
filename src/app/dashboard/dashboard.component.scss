@@ -8,3 +8,54 @@
     margin-left: 200px;
   }
 }
+
+//<----------------CSS for Header------------------->
+
+.header {
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .my-profile {
+    button::after {
+      display: none;
+    }
+    .profile {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+    }
+  }
+}
+
+//<----------------CSS for footer------------------->
+
+.footer-copyright {
+  flex: none;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.site-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.footer-social-links {
+
+  li {
+    display: inline-flex;
+
+    a {
+      padding: 12px;
+    }
+
+    i {
+      padding: 3px;
+    }
+  }
+}

@@ -1,6 +1,40 @@
-<div>
-  <ngx-cc-header [headerSettings]="config"></ngx-cc-header>
-  <ngx-cc-left-sidebar [menuSettings]="slideBar"></ngx-cc-left-sidebar>
+ <cc-lib-header class="header">
+    <ng-template ngHeaderLogo>
+      <img src="{{config.logoUrl}}" height="50px" width="50px" alt="..." class="rounded">
+      {{config.orgName}}
+    </ng-template>
+     <ng-template ngHeaderMenu>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul *ngIf="config.menus != null && config.menuEnabled" class="navbar-nav mr-auto">
+           <li *ngFor="let menu of config.menus" class="nav-item active decor">
+             <label ngbButtonLabel><a class="nav-link text-dark" href="{{menu.link}}">{{menu.title}} <span
+               class="sr-only">(current)</span></a></label>
+           </li>
+         </ul>
+       </div>
+     </ng-template>
+   <ng-template ngHeaderProfile>
+     <div aria-labelledby="dropdownForm1">
+       <form class="px-4">
+         <div class="form-group">
+           <div class="dropdown">
+             <a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  >
+               <img src="{{config.user.profileImage}}" height="30" width="30" alt="My Profile" id="dropdownForm1" class="rounded-circle">
+               <div><i>{{config.user.userName}}</i></div>
+             </a>
+             <div class="dropdown-menu">
+               <label *ngFor="let tag of config.user.tags">
+                 <a class="dropdown-item" href="{{tag.link}}">{{tag.detail}}</a>
+               </label>
+               <a class="dropdown-item" href="/login">Log Out</a>
+             </div>
+           </div>
+         </div>
+       </form>
+     </div>
+   </ng-template>
+ </cc-lib-header>
+ <cc-lib-left-sidebar [menuSettings]="slideBar"></cc-lib-left-sidebar>
   <div class="dashboardContainer">
     What is Lorem Ipsum?
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -44,5 +78,31 @@
 
   The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</div>
 
-  <ngx-cc-footer></ngx-cc-footer>
-</div>
+  <cc-lib-footer>
+    <div class="footer-inner has-top-divider">
+      <ul class="footer-social-links list-reset">
+        <li>
+          <a href="#">
+            <i class="fab fa-facebook"></i>
+            <span class="screen-reader-text">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+            <span class="screen-reader-text">Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fab fa-youtube"></i>
+            <span class="screen-reader-text">Youtube</span>
+          </a>
+        </li>
+      </ul>
+      <div class="footer-copyright">
+        &copy; 2019 VinGroup, all rights reserved
+      </div>
+    </div>
+
+  </cc-lib-footer>
